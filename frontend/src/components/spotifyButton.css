@@ -1,0 +1,69 @@
+.spotifyIconBigger {
+  align-items: center;
+  appearance: none;
+  background: linear-gradient(269.49deg, #7755f9 10.41%, #02aafd 111.89%),
+    linear-gradient(270.52deg, #db6c2f -10.09%, #7755f9 90.46%);
+  border: 0;
+  border-radius: 1.25rem;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  height: 2.625rem;
+  width: 6.688rem;
+  justify-content: center;
+  overflow: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+  text-align: left;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.spotifyIconBigger:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.spotifyIconBigger:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.spotifyIconBigger:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.spotifyIconBigger {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  width: 9rem;
+  margin: 2rem;
+}
+
+.spotifyIconBigger img {
+  padding: 0.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .spotifyIconBigger {
+    display: flex;
+    align-self: center;
+  }
+  .spotifyIconLittle {
+    display: none;
+  }
+}
