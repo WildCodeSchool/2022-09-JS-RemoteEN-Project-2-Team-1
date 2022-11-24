@@ -20,7 +20,7 @@
 body {
   min-height: 100vh;
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 2000px;
   min-width: 330px;
   width: 100%;
 }
@@ -163,6 +163,7 @@ h2 {
 .genreTextAndImg {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -639,8 +640,8 @@ background-image: linear-gradient(#302518 0.48%, rgba(84, 78, 70, 0.565217) 33.2
   }
 
   .genresImg img {
-    min-height: 350px;
-    min-width: 320px;
+    height: 350px;
+    width: 320px;
     object-fit: cover;
   }
 

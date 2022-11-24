@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 
@@ -23,7 +23,7 @@ import Footer from "./components/footer";
 import Recommended from "./components/Recommended";
 import TrendingArtists from "./components/trendingArtists";
 
-const GenrePage = lazy(() => import("./pages/GenrePage"));
+import GenrePage from "./pages/GenrePage";
 
 const genreInfo = [
   {
@@ -175,40 +175,38 @@ const genreInfo = [
 function App() {
   return (
     <div className="App">
-      <Suspense fallback={<h1>Loading.....</h1>}>
-        <Routes>
+      <Routes>
+        <Route
+          path="*"
+          element={
+            <div>
+              <Header />
+              <GenreSection />
+              <TrendingArtists />
+              <Recommended />
+              <WorldMusic />
+              <AboutUs />
+              <Footer />
+            </div>
+          }
+        />
+        {genreInfo.map((info) => (
           <Route
-            path="*"
             element={
-              <div>
-                <Header />
-                <GenreSection />
-                <TrendingArtists />
-                <Recommended />
-                <WorldMusic />
-                <AboutUs />
-                <Footer />
-              </div>
+              <GenrePage
+                title={info.title}
+                mainText={info.mainText}
+                image={info.image}
+                link={info.link}
+                Tlink={info.Tlink}
+                alt={info.alt}
+              />
             }
+            path={info.path}
+            key={info.id}
           />
-          {genreInfo.map((info) => (
-            <Route
-              element={
-                <GenrePage
-                  title={info.title}
-                  mainText={info.mainText}
-                  image={info.image}
-                  link={info.link}
-                  Tlink={info.Tlink}
-                  alt={info.alt}
-                />
-              }
-              path={info.path}
-              key={info.id}
-            />
-          ))}
-        </Routes>
-      </Suspense>
+        ))}
+      </Routes>
     </div>
   );
 }
